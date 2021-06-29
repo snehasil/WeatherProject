@@ -17,9 +17,9 @@ namespace CodeTheWay.Web.Ui.Controllers
         {
             this.WeatherService = weatherService;
         }
-        public async IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View(await WeatherViewModel.GetWeathers());
+            return View(await WeatherService.GetWeathers());
         }
 
 
@@ -27,6 +27,7 @@ namespace CodeTheWay.Web.Ui.Controllers
         {
             return View(new WeatherViewModel());
         }
+
         [HttpPost]
     
         public async Task<IActionResult> Delete(Guid Id)
@@ -37,5 +38,4 @@ namespace CodeTheWay.Web.Ui.Controllers
         }
     }
 
-}
 }

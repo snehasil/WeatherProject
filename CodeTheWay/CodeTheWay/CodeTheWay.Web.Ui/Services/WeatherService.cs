@@ -16,6 +16,7 @@ namespace CodeTheWay.Web.Ui.Services
             this.WeatherRepo = new WeatherRepository(dbContext);
         }
 
+
          public async Task<List<Weather>> GetWeathers(Guid id)
          {
              return await this.WeatherRepo.GetWeathers();
@@ -25,5 +26,11 @@ namespace CodeTheWay.Web.Ui.Services
         {
             return await WeatherRepo.Delete(weather);
         }
+
+        public async Task<List<Weather>> GetWeathers()
+        {
+            return await this.WeatherRepo.GetWeathers();
+        }
+
     }
 }

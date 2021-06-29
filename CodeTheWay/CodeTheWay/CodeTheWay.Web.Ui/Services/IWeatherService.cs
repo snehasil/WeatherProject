@@ -7,11 +7,16 @@ using System.Threading.Tasks;
 
 namespace CodeTheWay.Web.Ui.Services
 {
-    interface IWeatherService
+    public interface IWeatherService
     {
-        public Task<Student> CreateWeather(Weather weather);
+        public Task<Weather> Create(Weather weather);
 
         public Task<List<Weather>> GetWeathers();
+
+
+        public Task<List<Weather>> GetWeathers(Guid id);
+
+        public Task<Weather> Update(Weather weather);
 
         public Task<Weather> Delete(Weather weather);
     }
