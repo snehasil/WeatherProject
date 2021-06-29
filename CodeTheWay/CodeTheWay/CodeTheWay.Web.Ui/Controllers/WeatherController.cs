@@ -1,4 +1,5 @@
 ﻿using CodeTheWay.Web.Ui.Models;
+using CodeTheWay.Web.Ui.Models.MyViewModels.WeatherViewModel;
 using CodeTheWay.Web.Ui.Services;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -11,10 +12,23 @@ namespace CodeTheWay.Web.Ui.Controllers
     public class WeatherController : Controller
     {
         private IWeatherService WeatherService;
+
         public WeatherController(IWeatherService weatherService)
         {
             this.WeatherService = weatherService;
         }
+        public async IActionResult Index()
+        {
+            return View(await WeatherViewModel.GetWeathers());
+        }
+
+
+        public async Task<IActionResult> Create()
+        {
+            return View(new WeatherViewModel());
+        }
+        [HttpPost]
+    
         public async Task<IActionResult> Delete(Guid Id)
         {
             var weather = await WeatherService.GetWeathers(Id);
@@ -23,4 +37,5 @@ namespace CodeTheWay.Web.Ui.Controllers
         }
     }
 
+}
 }
