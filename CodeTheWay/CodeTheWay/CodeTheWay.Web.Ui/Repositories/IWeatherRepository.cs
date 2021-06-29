@@ -7,9 +7,9 @@ namespace CodeTheWay.Web.Ui.Repositories
 {
     interface IWeatherRepository
     {
-      /* public Task<Weather> Create(Weather Weathers);
+      public Task<Weather> Create(Weather Weathers);
 
         public Task<List<Weather>> GetWeathers();
-       */
+       
     }
 }

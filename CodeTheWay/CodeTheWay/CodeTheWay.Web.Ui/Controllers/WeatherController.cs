@@ -12,7 +12,14 @@ namespace CodeTheWay.Web.Ui.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            return View(await WeatherViewModel.GetWeathers());
         }
+        
+
+        public async Task<IActionResult> Create()
+        {
+            return View(new WeatherViewModel());
+        }
+        [HttpPost]
     }
 }
