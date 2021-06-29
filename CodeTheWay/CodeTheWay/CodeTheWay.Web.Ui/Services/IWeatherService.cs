@@ -13,7 +13,6 @@ namespace CodeTheWay.Web.Ui.Services
 
         public Task<List<Weather>> GetWeathers();
 
-
         public Task<List<Weather>> GetWeathers(Guid id);
 
         public Task<Weather> Update(Weather weather);
