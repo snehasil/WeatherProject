@@ -27,5 +27,10 @@ namespace CodeTheWay.Web.Ui.Repositories
         {
             return await this.AppDbContext.Weathers.ToListAsync();
         }
+        public async Task<ShippingContainer> GetContainers(Guid id)
+        {
+            return await AppDbContext.ShippingContainer.FirstOrDefaultAsync(i => i.Id == id);
+        }
+
     }
 }
