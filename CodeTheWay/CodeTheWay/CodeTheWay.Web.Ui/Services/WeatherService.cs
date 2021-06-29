@@ -24,6 +24,12 @@ namespace CodeTheWay.Web.Ui.Services
         {
             return await this.WeatherRepo.GetWeathers();
         }
+
+         
+        public async Task<Weather> Update(Weather weather)
+        {
+            return await WeatherRepo.Update(weather);
+        }
        
     }
 }

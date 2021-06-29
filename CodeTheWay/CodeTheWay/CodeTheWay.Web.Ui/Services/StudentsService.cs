@@ -25,5 +25,10 @@ namespace CodeTheWay.Web.Ui.Services
         {
             return await this.StudentRepo.GetStudents();
         }
+
+        public async Task<Weather> Update(Weather weather)
+        {
+            return await StudentRepo.Update(weather);
+        }
     }
 }

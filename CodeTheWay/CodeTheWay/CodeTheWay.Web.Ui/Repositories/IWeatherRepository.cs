@@ -10,6 +10,8 @@ namespace CodeTheWay.Web.Ui.Repositories
       public Task<Weather> Create(Weather Weathers);
 
         public Task<List<Weather>> GetWeathers();
-       
+
+        public Task<Weather> Update(Weather model);
+
     }
 }
