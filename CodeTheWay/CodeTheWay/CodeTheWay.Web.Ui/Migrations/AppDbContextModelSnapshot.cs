@@ -22,7 +22,7 @@ namespace CodeTheWay.Web.Ui.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("FirstName")
+                    b.Property<string>("FirstMidName")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("LastName")
@@ -31,6 +31,32 @@ namespace CodeTheWay.Web.Ui.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Students");
+                });
+
+            modelBuilder.Entity("CodeTheWay.Web.Ui.Models.Weather", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TEXT");
+
+                    b.Property<double>("AvgWindSpeed")
+                        .HasColumnType("REAL");
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("TEXT");
+
+                    b.Property<double>("HighTemp")
+                        .HasColumnType("REAL");
+
+                    b.Property<double>("LowTemp")
+                        .HasColumnType("REAL");
+
+                    b.Property<double>("TotalPrecipitation")
+                        .HasColumnType("REAL");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Weathers");
                 });
 #pragma warning restore 612, 618
         }
