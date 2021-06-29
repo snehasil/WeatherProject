@@ -1,5 +1,17 @@
 ﻿@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
-@{
-}
+@model CodeTheWay.Web.Ui.Models.ViewModels.WeatherViewModel
+@*
+    ViewData["Title"] = "Details";
+*@
+<h1>Details</h1>
+<p>ID:  @Model.Id</p>
+<p>Date:  @Model.Date</p>
+<p>HiTemp:  @Model.HiTemp</p>
+<p>LowTemp:  @Model.LowTemp</p>
+<p>AvgWindSpeed:  @Model.AvgWindSpeed</p>
+<p>TotalPrecipitation:  @Model.TotalPrecipitation</p>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
