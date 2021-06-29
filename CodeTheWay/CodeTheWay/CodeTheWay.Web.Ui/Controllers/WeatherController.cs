@@ -10,9 +10,17 @@ namespace CodeTheWay.Web.Ui.Controllers
 {
     public class WeatherController : Controller
     {
-        public IActionResult Index()
+        private IWeatherService WeatherService;
+        public WeatherController(IWeatherService weatherService)
         {
-            return View();
+            this.WeatherService = weatherService;
+        }
+        public async Task<IActionResult> Delete(Guid Id)
+        {
+            var weather = await WeatherService.GetWeathers(Id);
+            await WeatherService.Delete(weather);
+            return RedirectToAction("Index");
         }
     }
+
 }

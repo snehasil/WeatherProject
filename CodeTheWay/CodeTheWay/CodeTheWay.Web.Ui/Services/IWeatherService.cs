@@ -12,5 +12,7 @@ namespace CodeTheWay.Web.Ui.Services
         public Task<Student> CreateWeather(Weather weather);
 
         public Task<List<Weather>> GetWeathers();
+
+        public Task<Weather> Delete(Weather weather);
     }
 }
